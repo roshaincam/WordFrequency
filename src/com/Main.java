@@ -20,14 +20,7 @@ public class Main {
 
         for(int i=0;i<arr.length;i++) // Iterate over the array to check if word is contained in the map
         {
-            if(unsortedMap.containsKey(arr[i]))
-            {
-                unsortedMap.put(arr[i], unsortedMap.get(arr[i])+1);
-            }
-            else
-            {
-                unsortedMap.put(arr[i],1);
-            }
+                unsortedMap.put(arr[i], unsortedMap.containsKey(arr[i])? unsortedMap.get(arr[i])+1: 1);
         }
 
         LinkedHashMap<String, Integer> sortedMap = new LinkedHashMap<>(); //Map created to sort
